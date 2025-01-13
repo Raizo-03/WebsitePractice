@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="POST">
+        <label for="address">Address:</label>
+        <input type="text" name ="address" id ="address" placeholder="Address" size="30px" maxlength="100"> 
+        <br />
+         <label for="postal">Postal Code:</label>
+        <input type="number" name ="postal" id ="postal" placeholder="Postal Code" size="30px" maxlength="100"> 
+        <br />
+        <label for="city">City:</label>
+       <input type="text" name ="city" id ="city" placeholder="City" size="30px" maxlength="100"> 
+        <br />
+        <p>Choose your shipping method: </p>
+        <select name ="shipping">
+            <option value="freesupersaver">Free supersaver shipping</option>
+            <option value="cashondelivery">CashOnDelivery</option>
+            <option value="2 day shippin">1 Day Shipping</option>
+        </select>
+        <p>Choose your payment method: </p>
+        <label for="COD">COD</label>
+        <input type="radio" value="COD">
+        <label for="creditc">Credit Card</label>
+        <input type="radio" value="creditc">
+        <p>Comments:</p>
+        <textarea name="comments" id="comments" placeholder="Comment here"></textarea>
+        <br />
+        <label for="signmeup">Sign me up for email updates</label>
+        <input type ="checkbox" id ="signmeup">
+        <br/>
+        <label for="notifyme">Notify me for updates</label>
+        <input type ="checkbox" id ="notifyme">
+        <br/>
+        <input type="submit" name="submit">
+    </form>
+
+</body>
+</html>
