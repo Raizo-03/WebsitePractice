@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+       ul.list1{
+        /* list-style: upper-roman; */
+        /* list-style-image: url(/images/img1.png); */
+        list-style: lower-alpha;
+       }
+
+       ul.list2{
+        list-style: none;
+        padding: 0;
+        margin: 0;
+       }
+       ul.list2 li{
+        background-image: url(/images/img1.png);
+        background-repeat: no-repeat;
+        padding-left: 30px;
+        background-position: 0px center;
+       }
+    </style>
+</head>
+<body>
+    <p>A list of European capitals: </p>
+    <ul class="list1">
+        <li>Paris</li>
+        <li>London</li>
+        <li>Madrid</li>
+    </ul>
+    <p>A list of European capitals: </p>
+    <ul class="list2">
+        <li>Paris</li>
+        <li>London</li>
+        <li>Madrid</li>
+    </ul>
+</body> 
+</html>
