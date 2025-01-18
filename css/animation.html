@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2D Transform</title>
+    <style>
+        .bluebox{
+              background-color: blue; 
+              color:white;
+              height: 100px;
+              width: 100px;
+              position: relative;
+              animation: myanimation 3s infinite;
+              /* -webkit-animation: myanimation 3s; */
+            }
+
+       /*      @keyframes myanimation {
+                from{background-color: blue;}
+                to{background-color: pink;}
+            } */
+
+            @keyframes myanimation {
+            0% {
+                background: blue;
+                left: 0px;
+                top: 0px;
+            }
+            25% {
+                background: green;
+                left: 200px;
+                top: 0px;
+            }
+            50% {
+                background: orange;
+                left: 200px;
+                top: 200px;
+            }
+            75% {
+                background: pink;
+                left: 0px;
+                top: 200px;
+            }
+            100% {
+                background: red;
+                left: 0px;
+                top: 0px;
+            }
+        }
+
+        .redbox{
+             background-color: red;
+              color:black;
+              height: 100px;
+              width: auto;
+        }
+        
+        .greenbox{
+            background-color:green;
+              color:black;
+              height: 100px;
+              width: 100px;
+        }
+ 
+        .great{
+            background-color: coral;
+            /* display: block; */
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="bluebox">
+        <p>Facebook</p>
+
+        
+ 
+    </div>
+
+    <div class="redbox">
+      <p>Youtube</p>
+    </div>
+
+    <div class="greenbox">
+        <p>Microsoft</p>
+    </div>
+</body>
+</html>
