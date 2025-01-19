@@ -1,0 +1,25 @@
+/* Margin and Padding for all the elements */
+*{
+    box-sizing: border-box;
+
+}
+
+.container{
+    background-color: #07575B;
+    height: 200px;
+    margin: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+/* Styling all divs inside the container */
+.container > div{
+    background-color: #66a6AD;
+    color: aliceblue;
+    text-align: center;
+    padding: 20px;
+    margin: 2px;
+    border: 3px #C4DFE6 solid;
+    float: left;
+}
