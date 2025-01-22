@@ -1,14 +1,28 @@
+body{
+    font: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding:0;
+}
+*{
+    box-sizing: border-box;
+}
+
+
 #container{
-    width: 1050px;
+    width: 90%;
     /* border: 1px solid gray; */
-    margin: 0 auto;
+    margin: 0 auto; 
 }
 #header{
-    height: 100px;
+    /* height: 100px; */
     padding: 10px 0;
+    display: flex;
+    flex-wrap: wrap;
+    flex: 1;   
 }
 #brand{
-    float: left;
+    flex: 50%;
+    min-width: 400px;
 }
 h1 a{
     font-size: 40px;
@@ -17,12 +31,16 @@ h1 a{
     text-decoration: none;
 }
 #searchbox{
-    float:right;
+    /* float:right; */
+    flex:1;
     width: 400px;
     height: 50px;
     background: linear-gradient(#E4F2B9, #B7E953);
-    padding: 20px 20px 0 20px;
-    margin-top: 20px;
+    padding: 40px;
+    min-width: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .text{
     float: left;
@@ -35,6 +53,7 @@ h1 a{
 }
 .submit{
     float: right;
+    margin: 2px 0px  0px 5px ;
     padding: 5px;
     font-weight: bold;
     color: white;
