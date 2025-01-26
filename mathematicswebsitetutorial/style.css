@@ -3,6 +3,8 @@ body{
     margin: 0;
     padding:0;
 }
+
+
 *{
     box-sizing: border-box;
 }
@@ -12,6 +14,9 @@ body{
     width: 90%;
     /* border: 1px solid gray; */
     margin: 0 auto; 
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
 }
 #header{
     /* height: 100px; */
@@ -65,25 +70,24 @@ h1 a{
     clear:both;
 }
 #menu{
-    height: 70px;
+    /* height: 70px; */
     background: linear-gradient(#F8F594, #D5D533);
-    padding: 7px 0;
+    padding: 20px 0;
+    display: flex;
+    flex-wrap: wrap;
 }
 
-ul{
-    list-style: none;
-}
-#menu ul li{
-    float: left;
+#menu a{
+    /* float: left; */
     padding: 0 30px;
     height: 20px;
     border-right: 1px solid #5d12e7;
 }
-#menu ul li:last-child{
+#menu a:last-child{
     border-right: none;
 
 }
-#menu ul li a{
+#menu a{
     text-decoration: none;
     text-transform: uppercase;
     font-size: 18px;
@@ -97,10 +101,23 @@ ul{
 }
 
 
-#menu ul li a:hover, #menu ul li a.active{
+#menu a:hover, #menu a.active{
     font-size: 20px;
     font-weight: bold;
     color: #5d12e7;
+}
+
+/* Small Screen */
+@media screen and (max-width: 700px){
+    #menu{
+        flex-direction: column;
+        align-content: center;
+    }
+
+    #menu a{
+        border-right: none;
+    }
+    
 }
 
 #introduction{
@@ -128,12 +145,24 @@ ul{
 
 }
 
+.sidebarwrapper{
+    padding: 10px;
+    flex: 50%;
+}
+
+.sidebars{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0px;
+}
+
 .sidebar{
-    height: 500px;
-    width: 450px;
+    height: 100%;
+    width: 100%;
     border: 2px solid #a1d163;
     border-radius: 20px;
     padding: 10px 30px;
+    /* flex: 1 1 50%; */
 }
 
 .sidebar h3{
@@ -143,6 +172,7 @@ ul{
 .sidebar ul{
     padding-top: 8px;
 }
+
 
 #leftsidebar ul li{
     padding: 4px 0 4px 10px;
@@ -173,14 +203,14 @@ transition: font-size 0.3s ease;
 -o-transition: font-size 0.3s ease;
 -ms-transition: font-size 0.3s ease
 }
-
+/* 
 #leftsidebar{
     float: left;
 }
 
 #rightsidebar{
     float: right;
-}
+} */
 
 .footer{
     height: 60px;
@@ -189,5 +219,5 @@ transition: font-size 0.3s ease;
     background: -o-linear-gradient(#F6F390, #D5D533);
     background: -moz-linear-gradient(#F6F390, #D5D533);
     padding: 10px 30px;
-    margin-top: 15px
+    margin-top: auto;
 }
