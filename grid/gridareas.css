@@ -1,0 +1,110 @@
+/*Let's make sure that the dimensions of any box includes its border and padding, this gives us an easy way of sizing our elements*/
+* {
+    box-sizing: border-box;
+}
+
+
+.container > div{
+    background-color: #66a5AD;
+    color: aliceblue;
+    text-align: center;
+    font-size: 20px;
+    padding: 5px;
+    /* margin: 2px; */
+}
+
+.container{
+
+    /* The size of this is for mobile version */
+    height: 100vh;
+    background-color: #07575B;
+    display: grid;
+
+    /* rows height */
+    grid-template-rows: 50px 100px 1fr 100px 50px;
+
+    /* columns width */
+    /* grid-template-columns: 1fr 1fr 1fr 1fr; */
+    /* or */
+    /* grid-template-columns: repeat(4, 1fr); */
+    /* min max for the distribution of exactly the pixel stated */
+    grid-template-columns: 1fr;
+
+
+    /* The initial template for the grid is called the explicit grid */
+
+    /* gutter */
+    grid-gap: 5px;
+
+    padding: 7px;
+
+
+    /* Set the height of any extra rows outside the template(implicit grid) */
+    grid-auto-rows: 70px;
+
+    /* Sets where the added extra rows to the column or row
+        use grid-auto-flow:column ; for the column
+        use grid-auto-flow:row ; for the rows
+    
+
+        Sets the minimum size for the added extra rows
+        use grid-auto-columns: 200px;
+        use grid-auto-rows:70px;
+    */
+    grid-auto-columns: 200px;
+    grid-auto-flow: row;
+
+
+
+    /* GRID AREA PROPERTIES */
+    grid-template-areas: 
+    "facebook"
+    "apple"
+    "microsoft"
+    "samsung"
+    "google";
+
+}
+
+
+
+#apple{
+    grid-area: apple;
+}
+
+
+#facebook{
+    grid-area: facebook;
+}
+
+#samsung{
+    grid-area: samsung;
+}
+
+#microsoft{
+    grid-area: microsoft;
+}
+
+#google{
+    grid-area: google;
+}
+
+
+/* Responsiveness for small screens */
+
+@media all and (min-width: 700px){
+    .container{
+
+
+        /* Desktop Version */
+        /* Note: code mobile version first before the desktop */
+        grid-template-rows: 50px 1fr 50px;
+        grid-template-columns: 20% 1fr 20%;
+        grid-template-areas:
+        "apple apple apple"
+        "facebook microsoft samsung"
+        "google google google" ;
+    
+
+    }
+}
