@@ -1,0 +1,19 @@
+*{
+
+    box-sizing: border-box;
+}
+
+/* Makes each images be in their specific cell */
+.container > img{
+    max-width: 100%;
+
+}
+
+
+.container{
+    padding: 7px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-gap: 5px;
+    align-items: center;
+}
