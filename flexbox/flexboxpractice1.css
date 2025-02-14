@@ -9,6 +9,10 @@
     height: 400px;
     flex-direction: row;
     /* border: 1px solid blue; */
+
+
+    /* Justifies the content */
+    justify-content: space-around;
 }
 
 .container > div{
