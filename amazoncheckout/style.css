@@ -10,7 +10,6 @@ body, html{
 form{
     display: flex;
     flex-direction: column;
-    display: flex;
     height: 100vh;   
     padding: 10px;
     font-size: 24px;
@@ -116,6 +115,7 @@ form{
 .submit{
     margin-top: auto;
     text-align: center;
+    
 
 }
 

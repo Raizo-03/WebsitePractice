@@ -7,7 +7,7 @@
     display: flex;
     /* flex-wrap: wrap; */
     height: 400px;
-    flex-direction: col;
+    flex-direction: row;
     /* border: 1px solid blue; */
 }
 
@@ -17,9 +17,16 @@
     padding: 5px;
     text-align: center;
     width: 100px;
+
+    /* Aligns the div to align all the elements */
+    align-self: flex-end;
+
 }
 
 .one{
+
+    /* Orders the item */
+    order: 3;
     height: 80%;
     background-color: aqua;
 }
@@ -32,6 +39,11 @@
 .three{
     height: 70%;
     background-color: yellow;
+}
+
+.four{
+    height: 50%;
+    background-color: green;
 }
 
 
