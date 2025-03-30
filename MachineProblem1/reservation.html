@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Innova&Co</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+
+    <!-- Flatpickr JS -->
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css">
+
+
+</head>
+<body>
+    <div class="container">
+        <div class="nav">
+            <div id="brand">
+                <h1><a href="index.html">INNOVA&Co.</a></h1>
+                </div>
+        
+            <div id="links">
+                <ul>
+    
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="reservation.html">Reservation</a></li>
+                    <li><a href="company.html">Company Profile</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+    
+        </div>
+
+
+
+
+        <div class="reservation-container">
+            <form action="reservation.php" method="POST">
+             <!-- This is the form flexbox-->
+             <div class="contitle"><h1>Make A Reservation</h1> </div>
+
+
+             <div class="reservation">
+                <div class="time"></div>
+                <input type="hidden" id="time-input" name="current_time">
+                
+                <div class="reservation-group">
+                    <label for="name">Customer Name:</label>
+                    <input type="text" name="name" id="name" placeholder="Your name" size="35px" maxlength="" required>
+                </div>
+                <div class="reservation-group">
+                    <label for="number">Contact Number:</label>
+                    <input type="number" name="number" id="number" placeholder="Your number" size="35px" maxlength="" required>
+                </div>
+
+            <div class="reservation-group">
+                <label for="name">Reservation Date:</label>
+                <div class="date-range-picker">
+                    <div class="date-container">
+                        <i class="fa fa-calendar"></i>
+                        <input type="text" id="start-date" name="start_date" class="datepicker" placeholder="Select date start" size="45px" required>
+                    </div>
+                    <span>to</span>
+                    <div class="date-container">
+                        <i class="fa fa-calendar"></i>
+                        <input type="text" id="end-date"  name="end_date" class="datepicker" placeholder="Select date end" required>
+                    </div>
+                </div>
+                
+                <div class="reservation-group">
+                    <label for="room-type" class="roomlabel">Room Type:</label>
+                    <div class="room-type">
+                        <label>
+                            <input type="radio" name="room-type" value="suite"> Suite
+                        </label>
+                        <label>
+                            <input type="radio" name="room-type" value="deluxe"> Deluxe
+                        </label>
+                        <label>
+                            <input type="radio" name="room-type" value="regular"> Regular
+                        </label>
+                    </div>
+                </div>
+                
+                <div class="reservation-group">
+                    <label for="room-capacity" class="roomlabel">Room Capacity:</label>
+                    <div class="room-capacity">
+                        <label>
+                            <input type="radio" name="room-capacity" value="family"> Family
+                        </label>
+                        <label>
+                            <input type="radio" name="room-capacity" value="double"> Double
+                        </label>
+                        <label>
+                            <input type="radio" name="room-capacity" value="single"> Single
+                        </label>
+                    </div>
+                </div>
+
+                               
+                <div class="reservation-group">
+                    <label for="room-payment" class="roomlabel">Room Capacity:</label>
+                    <div class="room-capacity">
+                        <label>
+                            <input type="radio" name="room-payment" value="cash"> Cash
+                        </label>
+                        <label>
+                            <input type="radio" name="room-payment" value="cheque"> Cheque
+                        </label>
+                        <label>
+                            <input type="radio" name="room-payment" value="credit"> Credit Card
+                        </label>
+                    </div>
+                </div>
+
+
+            </div>
+
+            <div class="submit-reservation">
+
+                <div class="button-reserve">
+                    <button type="submit">Submit Reservation</button>
+                    <button type="reset" value="Clear">Clear</button>
+                </div>
+        
+
+            </div>
+
+             </div>
+
+
+             
+        </form>
+        </div>
+
+
+        <script>
+            function clearForm() {
+                document.getElementById("reservation-container").reset();
+            }
+            </script>
+
+
+
+
+
+
+
+        <div class="footer"> <h3>Innovatech Solutions © 2025</h3></div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            document.querySelector("form").addEventListener("submit", function (event) {
+                let roomType = document.querySelector('input[name="room-type"]:checked');
+                let roomCapacity = document.querySelector('input[name="room-capacity"]:checked');
+                let roomPayment = document.querySelector('input[name="room-payment"]:checked');
+        
+                if (!roomCapacity) {
+                    alert("No selected room capacity");
+                    event.preventDefault(); // Prevent form submission
+                    return;
+                }
+        
+                if (!roomType) {
+                    alert("No selected room type");
+                    event.preventDefault();
+                    return;
+                }
+        
+                if (!roomPayment) {
+                    alert("No selected type of payment");
+                    event.preventDefault();
+                    return;
+                }
+            });
+        });
+        </script>
+
+</body>
+</html>
+
+
+<script>
+    function updateTime() {
+        const timeDiv = document.querySelector(".time");
+        const timeInput = document.getElementById("time-input");
+        const now = new Date();
+
+        // Format the date & time
+        const options = { 
+            month: "long", 
+            day: "numeric", 
+            year: "numeric", 
+            hour: "numeric", 
+            minute: "2-digit", 
+            hour12: true 
+        };
+        const formattedTime = now.toLocaleString("en-US", options).replace(",", "");
+
+        timeDiv.textContent = formattedTime; // Update visible time
+        timeInput.value = formattedTime; // Store time in hidden input
+    }
+
+    function setTimeValue() {
+        updateTime(); // Ensure the latest time is set before submission
+    }
+
+    updateTime(); // Call function on page load
+    setInterval(updateTime, 1000); // Update every second
+</script>
+
+
+
+<script>
+    var startPicker = flatpickr("#start-date", {
+        dateFormat: "Y-m-d", // Ensure compatibility with PHP (YYYY-MM-DD)
+        onChange: function(selectedDates, dateStr) {
+            document.getElementById("start-date").value = dateStr;
+            endPicker.set("minDate", dateStr);
+        }
+    });
+
+    var endPicker = flatpickr("#end-date", {
+        dateFormat: "Y-m-d", // Ensure compatibility with PHP (YYYY-MM-DD)
+        onChange: function(selectedDates, dateStr) {
+            document.getElementById("end-date").value = dateStr;
+            startPicker.set("maxDate", dateStr);
+        }
+    });
+</script>
